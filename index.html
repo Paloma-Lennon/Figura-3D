@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Graficacion</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Graficacion</h1>
+    </header>
+    <nav>
+        <div>
+            <button onclick="drawPoint(100, 100)">punto</button>
+            <button onclick="drawLine(100, 100, 200, 200)">linea</button>
+            <button onclick="drawRectangle(100, 100, 200, 200)">rectangulo</button>
+            <button onclick="drawCircle(100, 100, 100, 'green')">circulo</button>
+            <button onclick="drawTriangle(100, 50, 200, 200, 50, 200, 'red', 'black', 2)">triangulo</button>
+            <button onclick="drawPolygon(
+                [
+                    { x: 150, y: 50 },
+                    { x: 250, y: 120 },
+                    { x: 220, y: 220 },
+                    { x: 80,  y: 220 },
+                    { x: 50,  y: 120 }
+                ],
+                'lightgreen',
+                'green'
+            )">poligono</button>
+            <button onclick="drawText('Hola Canvas', 100, 100)">texto</button>
+            <button onclick="drawImage(100, 100, 200, 200)">imagen</button>
+            <button onclick="clearCanvas()">limpiar</button>
+            <button onclick="dibujarPlanoCartesiano()">dibujar plano cartesiano</button>
+            <button onclick="iniciarReloj()">Iniciar reloj</button>
+        </div>
+        <br>
+        <div>
+            <label>Lina de punto A a B</label>
+            <input type="text" id="x1" placeholder="X1">
+            <input type="text" id="y1" placeholder="Y1">
+            <input type="text" id="x2" placeholder="X2">
+            <input type="text" id="y2" placeholder="Y2">
+            <button onclick="drawLineFromAtoB()">Dibujar</button>
+        </div>
+        <div>
+            <label>Estrella de 4 puntas</label>
+            <button onclick="drawStar()">Dibujar</button>
+
+            <button onclick="rotarZ()">Rotar Z+</button>
+            <button onclick="rotarZNegativo()">Rotar Z-</button>
+
+            <button onclick="rotarX()">Rotar X+</button>
+            <button onclick="rotarXNegativo()">Rotar X-</button>
+
+            <button onclick="rotarY()">Rotar Y+</button>
+            <button onclick="rotarYNegativo()">Rotar Y-</button>
+
+
+        </div>
+        <div>
+            <label>circulo</label>
+            <input type="text" id="x" placeholder="X" value="0">
+            <input type="text" id="y" placeholder="Y" value="0">
+            <input type="text" id="radius" placeholder="Radio" value="100">
+            <button onclick="drawCircleWithMath()">Dibujar</button>
+        </div>
+        <div>
+            <label>Hora inicial del reloj</label><br>
+            <input type="number" id="horaInput" placeholder="Hora (0-11)" min="0" max="11">
+            <input type="number" id="minutoInput" placeholder="Min (0-59)" min="0" max="59">
+            <input type="number" id="segundoInput" placeholder="Seg (0-59)" min="0" max="59">
+            <button onclick="iniciarRelojConHora()">Iniciar con hora</button>
+        </div>
+
+
+        <div>
+            <label>Cubo</label>
+            <button onclick="drawCube()">Dibujar cubo</button>
+
+            <button onclick="rotarCuboZ()">Rotar Z+</button>
+            <button onclick="rotarCuboZNegativo()">Rotar Z-</button>
+
+            <button onclick="rotarCuboX()">Rotar X+</button>
+            <button onclick="rotarCuboXNegativo()">Rotar X-</button>
+
+            <button onclick="rotarCuboY()">Rotar Y+</button>
+            <button onclick="rotarCuboYNegativo()">Rotar Y-</button>
+
+        </div>
+
+        <div>
+            <label>Diamante</label>
+            <button onclick="drawDiamond()">Dibujar Diamante</button>
+
+            <button onclick="rotarDiamondZ()">Rotar Z+</button>
+            <button onclick="rotarDiamondZNegativo()">Rotar Z-</button>
+
+            <button onclick="rotarDiamondX()">Rotar X+</button>
+            <button onclick="rotarDiamondXNegativo()">Rotar X-</button>
+
+            <button onclick="rotarDiamondY()">Rotar Y+</button>
+            <button onclick="rotarDiamondYNegativo()">Rotar Y-</button>
+
+        </div>
+
+    </nav>
+    <main>
+        <canvas id="myCanvas" width="500" height="500"></canvas>
+    </main>
+    <footer>
+        <p>Derechos reservados &copy; 2026</p>
+        <p>Tecnologico de Tlajomulco</p>
+        <p>Materia: Graficacion</p>
+        <p>Profesor: Jose Angel Torres Rangel</p>
+    </footer>
+</body>
+</html>
+
+<!-- cambio para forzar actualización -->
